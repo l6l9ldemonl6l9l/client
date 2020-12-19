@@ -1,16 +1,16 @@
 syntax = "proto3";
-package story_client.ds.Food;
+package distributedsystems.Food;
 option java_multiple_files = true;
 
 message FoodResponse {
   string id = 1;
   int32  taste = 2;
-  string kindFood = 3;
+  string name = 3;
 }
 
 message FoodRequest {
   int32  taste = 2;
-  string kindFood = 3;
+  string name = 3;
 }
 
 message AllFoodRequest {
@@ -26,7 +26,7 @@ message FoodByIdRequest {
 }
 
 message FoodByNameRequest {
-  string kindFood = 1;
+  string name = 1;
 }
 
 message DeleteFoodResponse {

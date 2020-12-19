@@ -1,19 +1,19 @@
 package story_client.ds.client;
 
-import story_client.ds.Deity.DeityRequest;
-import story_client.ds.Deity.DeityServiceGrpc;
-import story_client.ds.Food.FoodRequest;
-import story_client.ds.Food.FoodServiceGrpc;
-import story_client.ds.Terrain.TerrainRequest;
-import story_client.ds.Terrain.TerrainServiceGrpc;
-import story_client.ds.FairyAnimal.FairyAnimalRequest;
-import story_client.ds.FairyAnimal.FairyAnimalServiceGrpc;
+import distributedsystems.Deity.DeityRequest;
+import distributedsystems.Deity.DeityServiceGrpc;
+import distributedsystems.Food.FoodRequest;
+import distributedsystems.Food.FoodServiceGrpc;
+import distributedsystems.Terrain.TerrainRequest;
+import distributedsystems.Terrain.TerrainServiceGrpc;
+import distributedsystems.FairyAnimal.FairyAnimalRequest;
+import distributedsystems.FairyAnimal.FairyAnimalServiceGrpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
 public class GrpcTest {
     private final String url = "127.0.0.1";
-    private final ManagedChannel channel = ManagedChannelBuilder.forAddress(url, 57810).usePlaintext().build();
+    private final ManagedChannel channel = ManagedChannelBuilder.forAddress(url, 57802).usePlaintext().build();
     DeityServiceGrpc.DeityServiceBlockingStub DeityStub = DeityServiceGrpc.newBlockingStub(channel);
     TerrainServiceGrpc.TerrainServiceBlockingStub TerrainStub = TerrainServiceGrpc.newBlockingStub(channel);
     FoodServiceGrpc.FoodServiceBlockingStub FoodStub = FoodServiceGrpc.newBlockingStub(channel);
@@ -39,19 +39,23 @@ public class GrpcTest {
 
     }
 
-    private void addFood(String kindFood, int taste) {
+    private void addFood(String name, int taste) {
+        //System.out.println("Hello world!");
         FoodRequest food = FoodRequest.newBuilder().
-                setKindFood(kindFood).
+                setName(name).
                 setTaste(taste).
                 build();
         FoodStub.add(food);
+        System.out.println("Hello Food!");
+
     }
     private void addDeity(String name, int age) {
-        DeityRequest Deity = DeityRequest.newBuilder().
+        DeityRequest deity = DeityRequest.newBuilder().
                 setName(name).
                 setAge(age).
                 build();
-        DeityStub.add(Deity);
+        DeityStub.add(deity);
+        System.out.println("Hello Deity!");
     }
     private void addTerrain(String name, int sizeBeauty) {
         TerrainRequest Terrain = TerrainRequest.newBuilder().
@@ -59,6 +63,7 @@ public class GrpcTest {
                 setSizeBeauty(sizeBeauty).
                 build();
         TerrainStub.add(Terrain);
+        System.out.println("Hello Terrain!");
     }
     private void addFairyAnimal(String name, int energy, int sizeMind ) {
         FairyAnimalRequest FairyAnimal = FairyAnimalRequest.newBuilder().
@@ -67,6 +72,7 @@ public class GrpcTest {
                 setSizeMind(sizeMind).
                 build();
         FairyAnimalStub.add(FairyAnimal);
+        System.out.println("Hello FairyAnimal!");
 
     }
 

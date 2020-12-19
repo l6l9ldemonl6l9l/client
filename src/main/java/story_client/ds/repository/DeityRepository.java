@@ -10,5 +10,5 @@ import java.util.UUID;
 public interface DeityRepository extends JpaRepository<Deity, UUID> {
     Deity findByName(String name);
 
-    Deity findByDeityId(UUID id);
+    Deity findDeityById(UUID id);
 }

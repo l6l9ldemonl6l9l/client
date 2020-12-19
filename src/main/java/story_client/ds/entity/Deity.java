@@ -17,6 +17,7 @@ public final class Deity {
     private int age;
 
     public Deity(String name, int age){
+        this.id=UUID.randomUUID();
         this.name = name;
         this.age = age;
     }

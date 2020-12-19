@@ -11,5 +11,5 @@ import java.util.UUID;
 public interface FairyAnimalRepository extends JpaRepository<FairyAnimal, UUID> {
     FairyAnimal findByName(String name);
 
-    FairyAnimal findByFairyAnimalId(UUID id);
+    FairyAnimal findFairyByAnimalId(UUID id);
 }

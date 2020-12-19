@@ -15,6 +15,7 @@ public final class Terrain {
     private int sizeBeauty;
 
     public Terrain(String name, int sizeBeauty){
+        this.id=UUID.randomUUID();
         this.name = name;
         this.sizeBeauty = sizeBeauty;
     }

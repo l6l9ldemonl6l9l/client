@@ -13,10 +13,11 @@ public final class Food {
     private UUID id;
     @Column(unique = true)
     private int taste;
-    private String kindFood;
+    private String name;
 
-    public Food(String kindFood, int taste){
-        this.kindFood = kindFood;
+    public Food(String name, int taste){
+        this.id=UUID.randomUUID();
+        this.name = name;
         this.taste = taste;
 
     }

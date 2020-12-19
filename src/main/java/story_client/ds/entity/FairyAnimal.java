@@ -17,6 +17,7 @@ public final class FairyAnimal {
     private int sizeMind;
 
     public FairyAnimal(String name, int energy,int sizeMind){
+        this.id=UUID.randomUUID();
         this.name = name;
         this.energy = energy;
         this.sizeMind=sizeMind;
