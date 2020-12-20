@@ -46,7 +46,6 @@ public class GrpcTest {
                 setTaste(taste).
                 build();
         FoodStub.add(food);
-        System.out.println("Hello Food!");
 
     }
     private void addDeity(String name, int age) {
@@ -55,7 +54,6 @@ public class GrpcTest {
                 setAge(age).
                 build();
         DeityStub.add(deity);
-        System.out.println("Hello Deity!");
     }
     private void addTerrain(String name, int sizeBeauty) {
         TerrainRequest Terrain = TerrainRequest.newBuilder().
@@ -63,7 +61,6 @@ public class GrpcTest {
                 setSizeBeauty(sizeBeauty).
                 build();
         TerrainStub.add(Terrain);
-        System.out.println("Hello Terrain!");
     }
     private void addFairyAnimal(String name, int energy, int sizeMind ) {
         FairyAnimalRequest FairyAnimal = FairyAnimalRequest.newBuilder().
@@ -72,7 +69,6 @@ public class GrpcTest {
                 setSizeMind(sizeMind).
                 build();
         FairyAnimalStub.add(FairyAnimal);
-        System.out.println("Hello FairyAnimal!");
 
     }
 
